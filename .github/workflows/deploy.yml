@@ -1,9 +1,7 @@
 name: Mess Manager CI
 
 on:
-  push:
-    branches: [ main ]
-workflow_dispatch:
+  workflow_dispatch:
   inputs:
     selectBuild:
       description: 'Select Build'
@@ -15,6 +13,9 @@ workflow_dispatch:
       - server
       - client
       - admin
+  push:
+    branches: [ main ]
+
 jobs:
   all:
     runs-on: ubuntu-latest
