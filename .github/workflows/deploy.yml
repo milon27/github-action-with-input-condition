@@ -2,17 +2,17 @@ name: Mess Manager CI
 
 on:
   workflow_dispatch:
-  inputs:
-    selectBuild:
-      description: 'Select Build'
-      required: true
-      default: 'all' 
-      type: choice
-      options:
-      - all
-      - server
-      - client
-      - admin
+    inputs:
+      selectBuild:
+        description: 'Select Build'
+        required: true
+        default: 'all' 
+        type: choice
+        options:
+        - all
+        - server
+        - client
+        - admin
   push:
     branches: [ main ]
 
