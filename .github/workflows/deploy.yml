@@ -13,8 +13,8 @@ on:
         - server
         - client
         - admin
-  push:
-    branches: [ main ]
+  # push:
+  #   branches: [ main ]
 
 jobs:
   all:
