@@ -19,19 +19,19 @@ on:
 jobs:
   all:
     runs-on: ubuntu-latest
-    if: ${{ inputs.selectBuild }} = 'all'
+    if: ${{ github.event.inputs.selectBuild == 'all'}} 
     steps:
     - name: Run All
       run: echo "All......."
   server:
     runs-on: ubuntu-latest
-    if: ${{ inputs.selectBuild }} = 'server'
+    if: ${{ github.event.inputs.selectBuild == 'server'}} 
     steps:
     - name: Run server
       run: echo "server......."
   client:
     runs-on: ubuntu-latest
-    if: ${{ inputs.selectBuild }} = 'client'
+    if: ${{ github.event.inputs.selectBuild == 'client'}} 
     steps:
     - name: Run client
       run: echo "client......."
