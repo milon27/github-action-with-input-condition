@@ -1,0 +1,36 @@
+name: Mess Manager CI
+
+on:
+  push:
+    branches: [ main ]
+workflow_dispatch:
+  inputs:
+    selectBuild:
+      description: 'Select Build'
+      required: true
+      default: 'all' 
+      type: choice
+      options:
+      - all
+      - server
+      - client
+      - admin
+jobs:
+  all:
+    runs-on: ubuntu-latest
+    if: ${{ inputs.selectBuild }} = 'all'
+    steps:
+    - name: Run All
+      run: echo "All......."
+  server:
+    runs-on: ubuntu-latest
+    if: ${{ inputs.selectBuild }} = 'server'
+    steps:
+    - name: Run server
+      run: echo "server......."
+  client:
+    runs-on: ubuntu-latest
+    if: ${{ inputs.selectBuild }} = 'client'
+    steps:
+    - name: Run client
+      run: echo "client......."
