@@ -35,3 +35,9 @@ jobs:
     steps:
     - name: Run client
       run: echo "client......."
+  admin:
+    runs-on: ubuntu-latest
+    if: ${{ github.event.inputs.selectBuild == 'admin'}} 
+    steps:
+    - name: Run admin
+      run: echo "admin......."    
